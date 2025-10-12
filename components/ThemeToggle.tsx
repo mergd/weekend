@@ -27,7 +27,7 @@ export default function ThemeToggle() {
       title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
     >
       <span className="text-xl leading-none block">
-        {theme === "light" ? "󰖔" : ""}
+        {theme === "light" ? "\udb80\udf35" : ""}
       </span>
     </button>
   );

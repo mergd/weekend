@@ -1,7 +1,6 @@
 import ProjectList from "@/components/ProjectList";
 import CountdownTimer from "@/components/CountdownTimer";
 import { getProjects, getNextProject } from "@/lib/projects";
-import Box from "@/components/ascii/Box";
 
 export default function Home() {
   const projects = getProjects();
@@ -11,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center p-4 sm:p-8 py-12">
       <div className="w-full max-w-2xl space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <header className="text-center md:text-right flex flex-col">
+          <header className="text-center md:text-left flex flex-col">
             <h1 className="text-lg font-bold mb-1 text-primary">
               WEEKEND PROJECTS
             </h1>

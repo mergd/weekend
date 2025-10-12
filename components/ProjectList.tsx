@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Overlay from "./ascii/Overlay";
 import { Project } from "@/lib/projects";
+import { getRelativeTime, formatShortDate } from "@/lib/dateUtils";
+import { SkeletonLine } from "./ascii/Skeleton";
 
 interface ProjectListProps {
   projects: Project[];
@@ -18,6 +20,42 @@ export default function ProjectList({ projects }: ProjectListProps) {
       <div className="space-y-3">
         {projects.map((project, index) => {
           const shipped = isPast(project.shipDate);
+          const isHidden = project.hidden;
+          const isFuture = !shipped;
+
+          if (isHidden) {
+            return (
+              <div
+                key={project.title}
+                className="border-l-2 border-border pl-3 py-2 w-full text-left opacity-50 pointer-events-none"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs text-muted-foreground tabular-nums">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div className="text-sm">
+                        <SkeletonLine length={18} animated={true} />
+                      </div>
+                    </div>
+                    <p className="text-xs">
+                      <SkeletonLine length={24} animated={true} />
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-end gap-1 shrink-0">
+                    <span className="text-xs text-muted-foreground"></span>
+                    <span className="text-xs text-muted-foreground whitespace-nowrap">
+                      {isFuture
+                        ? getRelativeTime(project.shipDate)
+                        : formatShortDate(project.shipDate)}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
           return (
             <button
               key={project.title}
@@ -47,10 +85,9 @@ export default function ProjectList({ projects }: ProjectListProps) {
                     {shipped ? "" : ""}
                   </span>
                   <span className="text-xs text-muted-foreground whitespace-nowrap">
-                    {new Date(project.shipDate).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                    })}
+                    {isFuture
+                      ? getRelativeTime(project.shipDate)
+                      : formatShortDate(project.shipDate)}
                   </span>
                 </div>
               </div>
@@ -59,7 +96,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
         })}
       </div>
 
-      {selectedProject && (
+      {selectedProject && !selectedProject.hidden && (
         <Overlay
           onClose={() => setSelectedProject(null)}
           title={selectedProject.title}
@@ -76,22 +113,24 @@ export default function ProjectList({ projects }: ProjectListProps) {
               </p>
             </div>
 
-            <div>
-              <h3 className="text-xs text-muted-foreground mb-2">
-                {" "}
-                TECH STACK
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {selectedProject.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-0.5 bg-secondary text-secondary-foreground text-xs border border-border"
-                  >
-                    {tech}
-                  </span>
-                ))}
+            {selectedProject.tech.length > 0 && (
+              <div>
+                <h3 className="text-xs text-muted-foreground mb-2">
+                  {" "}
+                  TECH STACK
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 bg-secondary text-secondary-foreground text-xs border border-border"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             <div>
               <h3 className="text-xs text-muted-foreground mb-2"> SHIP DATE</h3>
@@ -118,7 +157,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
               </p>
             </div>
 
-            {isPast(selectedProject.shipDate) && (
+            {isPast(selectedProject.shipDate) && selectedProject.link && (
               <div>
                 <h3 className="text-xs text-muted-foreground mb-2"> LINK</h3>
                 <a

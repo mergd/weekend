@@ -1,65 +1,66 @@
 [
   {
-    "title": "Weekend 01 - Terminal Home",
-    "shipDate": "2025-02-08T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-01",
-    "description": "A personal ",
-    "tech": ["Next.js", "React", "Tailwind CSS"]
+    "title": "Weekend 01 - Weekend Projects",
+    "shipDate": "2025-10-11T17:00:00-05:00",
+    "link": "https://weekend.fldr.zip",
+    "description": "Ship a project every weekend",
+    "tech": ["Next.js", "React", "Tailwind CSS"],
+    "hidden": false
   },
   {
-    "title": "Weekend 02 - Inbox Zero",
-    "shipDate": "2025-02-15T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-02",
-    "description": "An email triage assistant that suggests the next action you should take on each message.",
-    "tech": ["Next.js", "OpenAI", "Supabase"]
+    "title": "Weekend 02 - ???",
+    "shipDate": "2025-10-18T17:00:00-05:00",
+    "link": "",
+    "description": "Something cool is coming...",
+    "tech": [],
+    "hidden": true
   },
   {
-    "title": "Weekend 03 - Pixel Painter",
-    "shipDate": "2025-02-22T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-03",
-    "description": "A collaborative pixel art pad that lets friends sketch together live.",
-    "tech": ["Next.js", "WebSockets", "Redis"]
+    "title": "Weekend 03 - ???",
+    "shipDate": "2025-10-25T17:00:00-05:00",
+    "link": "",
+    "description": "Something cool is coming...",
+    "tech": [],
+    "hidden": true
   },
   {
-    "title": "Weekend 04 - Habit Loop",
-    "shipDate": "2025-03-01T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-04",
-    "description": "Track daily habits with ASCII graphs and receive encouraging terminal nudges.",
-    "tech": ["Next.js", "Prisma", "PostgreSQL"]
+    "title": "Weekend 04 - ???",
+    "shipDate": "2025-11-01T17:00:00-05:00",
+    "link": "",
+    "description": "Something cool is coming...",
+    "tech": [],
+    "hidden": true
   },
   {
-    "title": "Weekend 05 - Quest Log",
-    "shipDate": "2025-03-08T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-05",
-    "description": "Turn your todo list into a game-like quest board complete with rewards.",
-    "tech": ["Next.js", "tRPC", "Drizzle"]
+    "title": "Weekend 05 - ???",
+    "shipDate": "2025-11-08T17:00:00-06:00",
+    "link": "",
+    "description": "Something cool is coming...",
+    "tech": [],
+    "hidden": true
   },
   {
-    "title": "Weekend 06 - Soundscape",
-    "shipDate": "2025-03-15T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-06",
-    "description": "Compose ambient noise blends to help you focus, each with a shareable link.",
-    "tech": ["Next.js", "Web Audio", "Tailwind CSS"]
+    "title": "Weekend 06 - ???",
+    "shipDate": "2025-11-15T17:00:00-06:00",
+    "link": "",
+    "description": "Something cool is coming...",
+    "tech": [],
+    "hidden": true
   },
   {
-    "title": "Weekend 07 - Feed Forge",
-    "shipDate": "2025-03-22T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-07",
-    "description": "Mash up RSS feeds and newsletters into one curated firehose.",
-    "tech": ["Next.js", "Edge Functions", "Upstash"]
+    "title": "Weekend 07 - ???",
+    "shipDate": "2025-11-22T17:00:00-06:00",
+    "link": "",
+    "description": "Something cool is coming...",
+    "tech": [],
+    "hidden": true
   },
   {
-    "title": "Weekend 08 - Launch Loom",
-    "shipDate": "2025-03-29T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-08",
-    "description": "A showcase page that stitches every weekend project together.",
-    "tech": ["Next.js", "Framer Motion", "Vercel"]
-  },
-  {
-    "title": "Weekend 09 - Code Canvas",
-    "shipDate": "2025-10-19T17:00:00-05:00",
-    "link": "https://shipyard.dev/weekend-09",
-    "description": "An interactive code playground with live preview and instant sharing.",
-    "tech": ["Next.js", "Monaco Editor", "WebContainers"]
+    "title": "Weekend 08 - ???",
+    "shipDate": "2025-11-29T17:00:00-06:00",
+    "link": "",
+    "description": "Something cool is coming...",
+    "tech": [],
+    "hidden": true
   }
 ]

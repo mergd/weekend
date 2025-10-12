@@ -12,3 +12,6 @@ Use commands to navigate around the website.
 This is a website for showing weekend projects - the projects should be written in json, and it should show a timer to the next weekend project.
 
 This is inspired by what mschf does.
+
+
+We use nerd fonts for the fonts - so feel free to use these instead of icons
