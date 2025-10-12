@@ -2,16 +2,76 @@
 alwaysApply: true
 ---
 
+## Project Overview
+This is a Next.js 15 project for showcasing weekend projects, inspired by MSCHF's drop model. The aesthetic is clean, minimal, and modern with ASCII/terminal UI components.
 
-This is an Next.js 15 project.
+## Design Philosophy
 
-We should have ascii components for all components and pages. It should still be and feel very clean minimal, modern, with different colors.
+### ASCII Components First
+- Build all UI with **ASCII characters** for borders, icons, and decorative elements
+- Store reusable ASCII components in `components/ascii/`
+- Components should support **variants** (e.g., single/double/rounded borders)
+- Keep it minimal but delightful - ASCII doesn't mean boring
 
-Use commands to navigate around the website.
+### Typography & Icons
+- **Monospace font** for the entire site (we use JetBrains Mono Nerd Font)
+- Use **Nerd Fonts** for icons instead of SVG libraries
+- Use `tabular-nums` for numbers that change (timers, counters)
+- This maintains alignment in monospace layouts
 
-This is a website for showing weekend projects - the projects should be written in json, and it should show a timer to the next weekend project.
+### Colors & Theme
+- Minimal color palette with **semantic naming**
+- Support both dark and light themes
+- Use CSS variables for theming
+- Prefer muted colors - let content shine, not decoration
 
-This is inspired by what mschf does.
+### Animation Principles
+- Animations should be **smooth and purposeful**
+- Use ASCII block characters (░▒▓█) for loading/shimmer effects
+- Always support `animated={false}` for static variants
+- Keep update intervals fast enough to feel smooth (100-150ms range)
 
+## Component Patterns
 
-We use nerd fonts for the fonts - so feel free to use these instead of icons
+### Interactive Elements
+- Mark all interactive components as `"use client"`
+- Add proper focus states for accessibility
+- Use smooth transitions on hover/focus
+- Support keyboard navigation where applicable
+- Non-interactive states should be visually distinct (opacity, cursor)
+
+### Containers & Borders
+- Use ASCII line-drawing characters for borders
+- Support multiple visual weights (single, double, rounded)
+- Borders should be decorative, not overwhelming
+- Consider accent colors for emphasis
+
+### Loading States
+- Build **skeleton components** for locked/loading content
+- Use animated gradients with ASCII block characters
+- Loading states should feel dynamic, not static
+- Maintain layout during loading (no content shifts)
+
+### Lists & Collections
+- Use subtle left borders for list items
+- Number items with zero-padding for alignment
+- Differentiate states clearly (active, disabled, locked)
+- Smooth hover states with color/border transitions
+
+### Time & Dates
+- Future dates: Show relative time (in 5d, in 3h)
+- Past dates: Show short absolute dates (Oct 12, Nov 3)
+- Use countdown timers for upcoming events
+- Keep time displays compact and scannable
+
+## Layout Principles
+- **Centered, constrained content** - don't let text stretch too wide
+- Consistent spacing using Tailwind utilities
+- Responsive design with mobile-first approach
+- Grid layouts for card-based content
+
+## Data Management
+- Store content in JSON files for easy editing
+- Use TypeScript interfaces for data structures
+- Keep data separate from presentation logic
+- Support metadata fields like `hidden`, `featured`, etc.
