@@ -11,13 +11,6 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
-  const jetBrainsMonoData = await fetch(
-    new URL(
-      "../public/fonts/JetBrainsMonoNerdFont-Regular.ttf",
-      import.meta.url
-    )
-  ).then((res) => res.arrayBuffer());
-
   return new ImageResponse(
     (
       <div
@@ -29,7 +22,7 @@ export default async function Image() {
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: "#0a0a0a",
-          fontFamily: "JetBrains Mono",
+          fontFamily: "monospace",
         }}
       >
         <div
@@ -82,14 +75,6 @@ export default async function Image() {
     ),
     {
       ...size,
-      fonts: [
-        {
-          name: "JetBrains Mono",
-          data: jetBrainsMonoData,
-          style: "normal",
-          weight: 400,
-        },
-      ],
     }
   );
 }
