@@ -24,12 +24,12 @@
     "hidden": false
   },
   {
-    "title": "Weekend 04 - ???",
+    "title": "Weekend 04 - 1-800-knockknock",
     "shipDate": "2025-11-01T17:00:00-05:00",
     "link": "",
-    "description": "Something cool is coming...",
-    "tech": [],
-    "hidden": true
+    "description": "Tell knock knock jokes to a voice AI!",
+    "tech": ["NodeJS", "OpenAI", "Twilio"],
+    "hidden": false
   },
   {
     "title": "Weekend 05 - ???",
